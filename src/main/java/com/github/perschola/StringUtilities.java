@@ -1,12 +1,16 @@
 package com.github.perschola;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StringUtilities {
     /**
      * @param input value to be returned
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -15,7 +19,7 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        return baseValue + valueToBeAdded;
     }
 
     /**
@@ -23,7 +27,11 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        String reversedString = "";
+        for (int i = valueToBeReversed.length() -1; i >= 0; i--) {
+            reversedString += valueToBeReversed.charAt(i);
+        }
+        return reversedString;
     }
 
     /**
@@ -31,7 +39,9 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        int indexMiddleChar =  word.length()/2;
+        Character middleChar = word.charAt(indexMiddleChar);
+        return middleChar ;
     }
 
     /**
@@ -40,7 +50,13 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        String newString = "";
+        for (int i = 0; i < value.length(); i++) {
+            if(value.charAt(i) != charToRemove){
+                newString += value.charAt(i);
+            }
+        }
+        return newString;
     }
 
     /**
@@ -48,6 +64,9 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        List<String> stringArray = new ArrayList<>();
+        stringArray = Arrays.asList(sentence.split(" "));
+        int index = stringArray.size()-1;
+        return stringArray.get(index);
     }
 }

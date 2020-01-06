@@ -1,5 +1,11 @@
 package com.github.perschola;
 
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Encryptor {
       /**
        * Given a phrase, get the acronym of that phrase. Acronym is the combination of
@@ -9,7 +15,13 @@ public class Encryptor {
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
+          List<String> listPhrase = new ArrayList<>();
+          String acronym = "";
+          listPhrase = Arrays.asList(phrase.split(" "));
+          for (int i = 0; i < listPhrase.size(); i++) {
+              acronym += listPhrase.get(i).charAt(0);
+          }
+          return acronym.toUpperCase();
       }
 
       /**
@@ -25,6 +37,19 @@ public class Encryptor {
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
+          String alphabet = "abcdefghijklmnopqrstuvwxyz";
+          String encryptedWord = "" ;
+          int index = 0;
+
+          for (int i = 0; i < word.length(); i++) {
+              Character tempChar = word.charAt(i);
+
+              index = alphabet.indexOf(tempChar) + 3;
+              if(index > 25){
+                  index -= 26;
+              }
+              encryptedWord += alphabet.charAt(index);
+          }
+          return encryptedWord;
       }
 }

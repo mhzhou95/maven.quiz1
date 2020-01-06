@@ -13,7 +13,7 @@ public class IsOddTest {
         MathUtilities mathUtilities = new MathUtilities();
 
         // when
-        Boolean actual = mathUtilities.isOdd(value);
+        Boolean actual = mathUtilities.isEven(value);
 
         // then
         Assert.assertEquals(expected, actual);
